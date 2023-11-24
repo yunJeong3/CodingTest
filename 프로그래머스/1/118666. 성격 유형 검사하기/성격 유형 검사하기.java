@@ -2,15 +2,21 @@ import java.util.*;
 class Solution {
     public String solution(String[] survey, int[] choices) {
         String answer = "";
-        // 최종적으로 점수를 확인할 check 배열
-        String[] check = {"RT", "CF", "JM", "AN"};
-        // 각 유형별 점수를 담을 hashmap
+        // 최종적으로 점수를 확인할 checkMap
+        HashMap<Integer, String> checkMap = new HashMap<>();
+        checkMap.put(0, "RT");
+        checkMap.put(1, "CF");
+        checkMap.put(2, "JM");
+        checkMap.put(3, "AN");
+        // 각 유형별 점수를 담을 map
         HashMap<Character, Integer> map = new HashMap<>();
-        for(int i=0; i<check.length; i++){
+        for(int i=0; i<4; i++){
             // map에 유형을 각각 담아준다.
-            map.put(check[i].charAt(0), 0);
-            map.put(check[i].charAt(1), 0);
+            map.put(checkMap.get(i).charAt(0), 0);
+            map.put(checkMap.get(i).charAt(1), 0);
         }
+        System.out.println(checkMap);
+        System.out.println(map);
 
         // 1 2 3 4 5 6 7
         // 3 2 1 0 1 2 3 => 3 이하면 왼쪽에 점수 추가, 5이상이면 오른쪽에 점수 추가
@@ -36,12 +42,13 @@ class Solution {
             }
         }
 
-        // survey를 다 돈 후에 체크 배열에서 둘 다 0이거나 같은 점수면 앞 문자를 담기
-        // String[] check = {"RT", "CF", "JM", "AN"};
-        for(int i=0; i<check.length; i++) {
-            int score = map.get(check[i].charAt(0));
-            if(score < map.get(check[i].charAt(1))) answer += check[i].charAt(1);
-            else answer += check[i].charAt(0);
+        System.out.println(map);
+        // 점수를 체크할 checkMap을 돌며 확인 
+        // "RT", "CF", "JM", "AN"
+        for(int i=0; i<4; i++) {
+            int score = map.get(checkMap.get(i).charAt(0));
+            if(score < map.get(checkMap.get(i).charAt(1))) answer += checkMap.get(i).charAt(1);
+            else answer += checkMap.get(i).charAt(0);
         }
         return answer;
     }
