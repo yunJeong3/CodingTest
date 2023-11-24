@@ -46,6 +46,7 @@ class Solution {
         // 점수를 체크할 checkMap을 돌며 확인 
         // "RT", "CF", "JM", "AN"
         for(int i=0; i<4; i++) {
+            // 뒷 문자의 점수가 크면 answer에 뒷 문자를 담고, 앞 문자의 점수가 크거나 같으면 앞 문자를 담는다.
             int score = map.get(checkMap.get(i).charAt(0));
             if(score < map.get(checkMap.get(i).charAt(1))) answer += checkMap.get(i).charAt(1);
             else answer += checkMap.get(i).charAt(0);
