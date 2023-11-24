@@ -1,6 +1,28 @@
 import java.util.*;
 class Solution {
     public String solution(String[] survey, int[] choices) {
+        /* 최종 수정 후 소요시간 
+        테스트 1 〉	통과 (1.83ms, 84.8MB)
+        테스트 2 〉	통과 (2.42ms, 72.3MB)
+        테스트 3 〉	통과 (1.73ms, 76.5MB)
+        테스트 4 〉	통과 (2.93ms, 77.6MB)
+        테스트 5 〉	통과 (2.11ms, 82.8MB)
+        테스트 6 〉	통과 (2.22ms, 75.4MB)
+        테스트 7 〉	통과 (2.02ms, 76MB)
+        테스트 8 〉	통과 (2.03ms, 76.6MB)
+        테스트 9 〉	통과 (2.29ms, 76.2MB)
+        테스트 10 〉	통과 (2.74ms, 91.4MB)
+        테스트 11 〉	통과 (1.89ms, 77.5MB)
+        테스트 12 〉	통과 (1.74ms, 77.1MB)
+        테스트 13 〉	통과 (2.39ms, 76.2MB)
+        테스트 14 〉	통과 (2.66ms, 73.3MB)
+        테스트 15 〉	통과 (2.00ms, 77.4MB)
+        테스트 16 〉	통과 (2.20ms, 75.9MB)
+        테스트 17 〉	통과 (2.80ms, 76.3MB)
+        테스트 18 〉	통과 (2.23ms, 80.5MB)
+        테스트 19 〉	통과 (2.94ms, 82.6MB)
+        테스트 20 〉	통과 (2.67ms, 75.8MB)
+        */
         String answer = "";
         // 최종적으로 점수를 확인할 checkMap
         HashMap<Integer, String> checkMap = new HashMap<>();
@@ -43,7 +65,7 @@ class Solution {
         }
 
         System.out.println(map);
-        // checkMap을 통해 점수 확인 ("RT", "CF", "JM", "AN")
+        // checkMap을 통해 점수 확인. ("RT", "CF", "JM", "AN")
         for(int i=0; i<4; i++) {
             Character checkStr1 = checkMap.get(i).charAt(0);
             Character checkStr2 = checkMap.get(i).charAt(1);
