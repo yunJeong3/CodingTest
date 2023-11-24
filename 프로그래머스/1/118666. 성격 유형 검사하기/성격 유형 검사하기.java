@@ -43,13 +43,13 @@ class Solution {
         }
 
         System.out.println(map);
-        // checkMap을 하나하나 돌며 확인 "RT", "CF", "JM", "AN"
+        // checkMap을 통해 점수 확인 ("RT", "CF", "JM", "AN")
         for(int i=0; i<4; i++) {
-            String checkStr = checkMap.get(i);
-            int score = map.get(checkStr.charAt(0));
-            if(score < map.get(checkStr.charAt(1))) answer += checkStr.charAt(1);
-            else answer += checkStr.charAt(0);
+            Character checkStr1 = checkMap.get(i).charAt(0);
+            Character checkStr2 = checkMap.get(i).charAt(1);
+            int score = map.get(checkStr1);
+            if(score < map.get(checkStr2)) answer += checkStr2;
+            else answer += checkStr1;
         }
         return answer;
-    }
 }
